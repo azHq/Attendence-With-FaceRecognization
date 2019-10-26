@@ -37,13 +37,15 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
   private final FirebaseVisionFaceDetector detector;
 
   public FaceDetectionProcessor() {
+
     FirebaseVisionFaceDetectorOptions options =
         new FirebaseVisionFaceDetectorOptions.Builder()
-            .setClassificationType(FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
+            .setClassificationType(FirebaseVisionFaceDetectorOptions.ACCURATE_MODE)
             .setTrackingEnabled(true)
             .build();
 
     detector = FirebaseVision.getInstance().getVisionFaceDetector(options);
+
   }
 
   @Override
